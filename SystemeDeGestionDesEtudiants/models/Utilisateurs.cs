@@ -14,4 +14,14 @@ namespace essaiProjetExam.Models
         public string Role { get; set; }
         public string Telephone { get; set; }
     }
+
+  
+       internal  class ViewUser
+    {
+        public int Id { get; set; }
+        public  string NomUtilisateur { get; set; }
+        public string Role { get; set; }
+        public string Telephone { get; set; }
+
+    }
 }
