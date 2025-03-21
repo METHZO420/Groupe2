@@ -1,32 +1,15 @@
 ﻿using essaiProjetExam;
 using essaiProjetExam.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Runtime.Remoting.Contexts;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SystemeDeGestionDesEtudiants.View;
 using Twilio;
-using Twilio.Rest.Api.V2010.Account;
 using Twilio.Rest.Verify.V2.Service;
-using Twilio.Types;
-using static DevExpress.XtraEditors.Mask.MaskSettings;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
 namespace SystemeDeGestionDesEtudiants
 {
     public partial class Connexion : Form
     {
-        bool btnclick = false;
-
         public Connexion()
         {
             InitializeComponent();
@@ -39,7 +22,7 @@ namespace SystemeDeGestionDesEtudiants
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-          
+
             txtOTP.ReadOnly = false;
 
             string nom = txtNomUtilisateur.Text;
@@ -49,11 +32,10 @@ namespace SystemeDeGestionDesEtudiants
                 var user = db.Utilisateurs.FirstOrDefault(u => u.NomUtilisateur == nom && u.MotDePasse == mdp);
                 if (user != null)
                 {
-                    MessageBox.Show("Veuillez saisir l'otp qui vous envoyer par SMS dans le champ CODE OTP","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Veuillez saisir l'otp qui vous envoyer par SMS dans le champ CODE OTP", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     string accountSid = "AC1d58649cc707b259d9a44f6276a73302";
-                    string authToken = "15a3b2b09da9d93e912b9656f630a22b";
-                    string twilioPhoneNumber = "+221781492188"; // Votre numéro Twilio
-                    string recipientPhoneNumber = "+221" + user.Telephone; // Numéro du destinataire
+                    string authToken = "b7f28e158bf9fbd6feba2b29c291da3b";
+                    //   string twilioPhoneNumber = "+221781492188"; // Votre numéro Twilio
                     TwilioClient.Init(accountSid, authToken);
 
                     // Envoyer un OTP avec Twilio Verify
@@ -70,23 +52,6 @@ namespace SystemeDeGestionDesEtudiants
                 }
 
 
-                /* string nom = txtNomUtilisateur.Text;
-                     string mdp = txtMotDePasse.Text;
-                     using (var db=new DbExamContext())
-                     {
-                         var user = db.Utilisateurs.FirstOrDefault(u => u.NomUtilisateur == nom && u.MotDePasse == mdp);
-
-                         if(user != null)
-                         {
-                             Form acceuil = new Acceuil(nom);
-                             acceuil.ShowDialog();
-
-                         }
-                         else
-                         {
-                             MessageBox.Show("Nom d'utilisateur ou Mot de passe Incorect");
-                         }
-                     }*/
             }
         }
 
@@ -96,7 +61,6 @@ namespace SystemeDeGestionDesEtudiants
 
         private void btnValideOTP_Click(object sender, EventArgs e)
         {
-            btnclick = true;
         }
         private void VerifierOTP(string otpCode)
 
@@ -112,7 +76,7 @@ namespace SystemeDeGestionDesEtudiants
                     try
                     {
                         var verificationCheck = VerificationCheckResource.Create(
-                            to:"+221"+ user.Telephone ,
+                            to: "+221" + user.Telephone,
                             code: otpCode,
                             pathServiceSid: "VA4b3f986a379f881759a710927eff53a5"
                         );
@@ -121,12 +85,13 @@ namespace SystemeDeGestionDesEtudiants
                         {
                             OTPCode otp = new OTPCode();
                             otp.IdUtilisateur = user.Id;
-                            otp.DateExpiration = DateTime.Now.AddMinutes(30);
+                            otp.DateExpiration = DateTime.Now.AddMinutes(10);
                             otp.Utilisateurs = user;
+                            otp.code = otpCode;
                             db.OTPCodes.Add(otp);
                             db.SaveChanges();
                             MessageBox.Show("Code OTP valide. Accès autorisé.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Form acceuil = new Acceuil(txtNomUtilisateur.Text);
+                            Form acceuil = new Acceuil(user.Id);
                             acceuil.ShowDialog();
                             this.Hide();
                         }
@@ -142,8 +107,8 @@ namespace SystemeDeGestionDesEtudiants
                     }
 
                 }
+            }
         }
-    }
 
         private void txtOTP_TextChanged(object sender, EventArgs e)
         {
@@ -154,7 +119,7 @@ namespace SystemeDeGestionDesEtudiants
             {
                 using (var db = new DbExamContext())
                 {
-                   
+
                     VerifierOTP(otpCode);
                 }
             }

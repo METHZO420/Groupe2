@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace essaiProjetExam.Models
+﻿namespace essaiProjetExam.Models
 {
     class Utilisateurs
     {
@@ -15,11 +9,11 @@ namespace essaiProjetExam.Models
         public string Telephone { get; set; }
     }
 
-  
-       internal  class ViewUser
+
+    internal class ViewUser
     {
         public int Id { get; set; }
-        public  string NomUtilisateur { get; set; }
+        public string NomUtilisateur { get; set; }
         public string Role { get; set; }
         public string Telephone { get; set; }
 

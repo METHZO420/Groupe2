@@ -1,27 +1,28 @@
 ﻿using essaiProjetExam;
 using essaiProjetExam.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SystemeDeGestionDesEtudiants.View
 {
-    public partial class GestionProf: Form
+    public partial class GestionProf : Form
     {
         public GestionProf()
         {
             InitializeComponent();
+            using(var db = new DbExamContext())
+            {
+                cbMatiere.DataSource = db.Matieres.ToList();
+                cbMatiere.DisplayMember = "Nom";
+                cbMatiere.ValueMember = "Id";
+            }
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            using(var db= new DbExamContext())
+            using (var db = new DbExamContext())
             {
                 if (txtemail.Text.Contains("@"))
                 {
@@ -60,7 +61,6 @@ namespace SystemeDeGestionDesEtudiants.View
                             Professeurs profModifier = db.Set<Professeurs>().Find(idProf);
 
                             profModifier.Nom = txtNom.Text;
-
                             profModifier.Prenom = txtPrenom.Text;
                             profModifier.Email = txtemail.Text;
                             profModifier.Telephone = txtTelephone.Text;
@@ -87,7 +87,7 @@ namespace SystemeDeGestionDesEtudiants.View
 
         public void actualiser()
         {
-            using (var db=new DbExamContext())
+            using (var db = new DbExamContext())
             {
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = db.Professeurs.ToList();
@@ -111,7 +111,7 @@ namespace SystemeDeGestionDesEtudiants.View
                 using (var db = new DbExamContext())
                 {
                     int idprof = (int)dataGridView1.SelectedRows[0].Cells["Id"].Value;
-                    Professeurs professeurSupprimer = db.Professeurs.Find(idprof);
+                    essaiProjetExam.Models.Professeurs professeurSupprimer = db.Professeurs.Find(idprof);
                     db.Professeurs.Remove(professeurSupprimer);
                     db.SaveChanges();
                     actualiser();
@@ -139,6 +139,42 @@ namespace SystemeDeGestionDesEtudiants.View
                 dataGridView1.DataSource = prof;
 
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows != null)
+            {
+                using (var db = new DbExamContext())
+                {
+                    int idProf = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
+                    Professeurs prof = db.Professeurs.Find(idProf);
+                    ProfesseursMatieres professeursMatieres = new ProfesseursMatieres();
+                    int idMatiere = (int)cbMatiere.SelectedValue;
+                    var proflist = db.ProfesseursMatieres.Where(c => c.IdProfesseur == idProf && c.IdMatiere == idMatiere).ToList();
+                    if (proflist!= null)
+                    {
+                        MessageBox.Show("Le professeur est deja associé a cette matiere", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    professeursMatieres.IdProfesseur = prof.Id;
+                    professeursMatieres.IdMatiere = (int)cbMatiere.SelectedValue;
+                    professeursMatieres.Professeurs = prof;
+                    professeursMatieres.Matieres = db.Matieres.Find((int)cbMatiere.SelectedValue);
+                    db.ProfesseursMatieres.Add(professeursMatieres);
+                    db.SaveChanges();
+                    MessageBox.Show("Le professeur"+prof.Nom+"est associer a la matiere "+cbMatiere.Text+"","Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void cbMatiere_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

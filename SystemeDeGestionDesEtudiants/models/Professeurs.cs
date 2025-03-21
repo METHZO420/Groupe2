@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace essaiProjetExam.Models
 {
@@ -13,5 +9,13 @@ namespace essaiProjetExam.Models
         public string Prenom { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
+        public ICollection<ProfesseursMatieres> ProfesseursMatieres { get; set; }
+        partial class ViewProf
+        {
+            public string Nom { get; set; }
+            public string Prenom { get; set; }
+            public string Email { get; set; }
+            public string Telephone { get; set; }
+        }
     }
 }

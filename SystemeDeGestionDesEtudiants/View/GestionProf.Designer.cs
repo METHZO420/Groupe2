@@ -44,6 +44,9 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbMatiere = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +76,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(709, 270);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label9
             // 
@@ -116,6 +120,7 @@
             // 
             // txtNom
             // 
+            this.txtNom.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtNom.Location = new System.Drawing.Point(43, 122);
             this.txtNom.Multiline = true;
             this.txtNom.Name = "txtNom";
@@ -124,6 +129,7 @@
             // 
             // txtPrenom
             // 
+            this.txtPrenom.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPrenom.Location = new System.Drawing.Point(43, 199);
             this.txtPrenom.Multiline = true;
             this.txtPrenom.Name = "txtPrenom";
@@ -132,6 +138,7 @@
             // 
             // txtTelephone
             // 
+            this.txtTelephone.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTelephone.Location = new System.Drawing.Point(43, 354);
             this.txtTelephone.Multiline = true;
             this.txtTelephone.Name = "txtTelephone";
@@ -140,6 +147,7 @@
             // 
             // txtemail
             // 
+            this.txtemail.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtemail.Location = new System.Drawing.Point(43, 278);
             this.txtemail.Multiline = true;
             this.txtemail.Name = "txtemail";
@@ -148,46 +156,51 @@
             // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(339, 452);
+            this.btnModifier.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnModifier.Location = new System.Drawing.Point(337, 503);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(109, 28);
             this.btnModifier.TabIndex = 30;
             this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.UseVisualStyleBackColor = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnSupprimer
             // 
-            this.btnSupprimer.Location = new System.Drawing.Point(593, 452);
+            this.btnSupprimer.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSupprimer.Location = new System.Drawing.Point(591, 503);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(109, 28);
             this.btnSupprimer.TabIndex = 29;
             this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnFermer
             // 
-            this.btnFermer.Location = new System.Drawing.Point(881, 452);
+            this.btnFermer.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnFermer.Location = new System.Drawing.Point(879, 503);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(109, 28);
             this.btnFermer.TabIndex = 28;
             this.btnFermer.Text = "Fermer";
-            this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.UseVisualStyleBackColor = false;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // btnAjouter
             // 
-            this.btnAjouter.Location = new System.Drawing.Point(94, 452);
+            this.btnAjouter.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAjouter.Location = new System.Drawing.Point(92, 503);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(109, 28);
             this.btnAjouter.TabIndex = 27;
             this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.UseVisualStyleBackColor = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // txtRecherche
             // 
+            this.txtRecherche.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtRecherche.Location = new System.Drawing.Point(897, 37);
             this.txtRecherche.Multiline = true;
             this.txtRecherche.Name = "txtRecherche";
@@ -205,11 +218,50 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Rechercher :";
             // 
+            // cbMatiere
+            // 
+            this.cbMatiere.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbMatiere.FormattingEnabled = true;
+            this.cbMatiere.Location = new System.Drawing.Point(551, 429);
+            this.cbMatiere.Name = "cbMatiere";
+            this.cbMatiere.Size = new System.Drawing.Size(224, 24);
+            this.cbMatiere.TabIndex = 33;
+            this.cbMatiere.SelectedIndexChanged += new System.EventHandler(this.cbMatiere_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(479, 431);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Matiere:";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(785, 426);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(183, 27);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Associer a la Matiere";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GestionProf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 505);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1086, 543);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbMatiere);
             this.Controls.Add(this.txtRecherche);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnModifier);
@@ -253,5 +305,8 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbMatiere;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
