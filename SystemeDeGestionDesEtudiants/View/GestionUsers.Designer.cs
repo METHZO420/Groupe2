@@ -60,6 +60,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(794, 337);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // label2
@@ -87,6 +88,7 @@
             // 
             // txtRecherche
             // 
+            this.txtRecherche.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtRecherche.Location = new System.Drawing.Point(940, 34);
             this.txtRecherche.Multiline = true;
             this.txtRecherche.Name = "txtRecherche";
@@ -96,6 +98,7 @@
             // 
             // txtTelephone
             // 
+            this.txtTelephone.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTelephone.Location = new System.Drawing.Point(51, 368);
             this.txtTelephone.Multiline = true;
             this.txtTelephone.Name = "txtTelephone";
@@ -104,6 +107,7 @@
             // 
             // txtMotDePasse
             // 
+            this.txtMotDePasse.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMotDePasse.Location = new System.Drawing.Point(51, 213);
             this.txtMotDePasse.Multiline = true;
             this.txtMotDePasse.Name = "txtMotDePasse";
@@ -113,6 +117,7 @@
             // 
             // txtNom
             // 
+            this.txtNom.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtNom.Location = new System.Drawing.Point(51, 136);
             this.txtNom.Multiline = true;
             this.txtNom.Name = "txtNom";
@@ -121,8 +126,7 @@
             // 
             // txtRole
             // 
-            this.txtRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtRole.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtRole.FormattingEnabled = true;
             this.txtRole.Items.AddRange(new object[] {
             "DE",
@@ -130,7 +134,7 @@
             "Professeur"});
             this.txtRole.Location = new System.Drawing.Point(51, 292);
             this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(188, 23);
+            this.txtRole.Size = new System.Drawing.Size(188, 24);
             this.txtRole.TabIndex = 13;
             // 
             // label6
@@ -175,48 +179,53 @@
             // 
             // btnAjouter
             // 
+            this.btnAjouter.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnAjouter.Location = new System.Drawing.Point(77, 476);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(109, 28);
             this.btnAjouter.TabIndex = 18;
             this.btnAjouter.Text = "Ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.UseVisualStyleBackColor = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnFermer
             // 
+            this.btnFermer.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnFermer.Location = new System.Drawing.Point(864, 476);
             this.btnFermer.Name = "btnFermer";
             this.btnFermer.Size = new System.Drawing.Size(109, 28);
             this.btnFermer.TabIndex = 19;
             this.btnFermer.Text = "Fermer";
-            this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.UseVisualStyleBackColor = false;
             this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click_1);
             // 
             // btnSupprimer
             // 
+            this.btnSupprimer.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnSupprimer.Location = new System.Drawing.Point(576, 476);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(109, 28);
             this.btnSupprimer.TabIndex = 20;
             this.btnSupprimer.Text = "Supprimer";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click_1);
             // 
             // btnModifier
             // 
+            this.btnModifier.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnModifier.Location = new System.Drawing.Point(322, 476);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(109, 28);
             this.btnModifier.TabIndex = 21;
             this.btnModifier.Text = "Modifier";
-            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.UseVisualStyleBackColor = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // GestionUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1139, 535);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnSupprimer);

@@ -75,6 +75,7 @@
             // 
             // txtNomUtilisateur
             // 
+            this.txtNomUtilisateur.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtNomUtilisateur.Location = new System.Drawing.Point(641, 197);
             this.txtNomUtilisateur.Multiline = true;
             this.txtNomUtilisateur.Name = "txtNomUtilisateur";
@@ -83,6 +84,7 @@
             // 
             // txtMotDePasse
             // 
+            this.txtMotDePasse.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMotDePasse.Location = new System.Drawing.Point(641, 293);
             this.txtMotDePasse.Multiline = true;
             this.txtMotDePasse.Name = "txtMotDePasse";
@@ -92,17 +94,19 @@
             // 
             // btnConnexion
             // 
+            this.btnConnexion.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btnConnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnexion.Location = new System.Drawing.Point(761, 346);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(181, 35);
             this.btnConnexion.TabIndex = 5;
             this.btnConnexion.Text = "recevoir le code OTP";
-            this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.UseVisualStyleBackColor = false;
             this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
             // txtOTP
             // 
+            this.txtOTP.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtOTP.Location = new System.Drawing.Point(641, 411);
             this.txtOTP.Multiline = true;
             this.txtOTP.Name = "txtOTP";
@@ -136,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1161, 530);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtOTP);

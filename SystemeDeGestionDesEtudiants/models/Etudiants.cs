@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace essaiProjetExam.Models
 {
@@ -19,6 +16,6 @@ namespace essaiProjetExam.Models
         public string Sexe { get; set; }
         public int IdClasse { get; set; }
         public Classes classe { get; set; }
-
+        public ICollection<Notes> Notes { get; set; }
     }
 }

@@ -63,6 +63,16 @@ namespace SystemeDeGestionDesEtudiants.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3289566_assistant_educator_professor_showing_teacher_teaching_107089 {
+            get {
+                object obj = ResourceManager.GetObject("3289566-assistant-educator-professor-showing-teacher-teaching_107089", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Progetto_senza_titolo__1_ {
             get {
                 object obj = ResourceManager.GetObject("Progetto senza titolo (1)", resourceCulture);

@@ -15,6 +15,22 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\Hp\Downloads\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +51,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>10A269BD9A483416218333078900E60AF681D76F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SystemeDeGestionDesEtudiants_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bogus, Version=35.6.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.35.6.2\lib\net40\Bogus.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.2, Version=24.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -116,6 +151,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Text.Encodings.Web, Version=9.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.9.0.2\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -128,7 +165,9 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -151,6 +190,36 @@
     <Compile Include="Migrations\202503050239196_misajour.Designer.cs">
       <DependentUpon>202503050239196_misajour.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503092305161_updateDB.cs" />
+    <Compile Include="Migrations\202503092305161_updateDB.Designer.cs">
+      <DependentUpon>202503092305161_updateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503100116133_updateDB2.cs" />
+    <Compile Include="Migrations\202503100116133_updateDB2.Designer.cs">
+      <DependentUpon>202503100116133_updateDB2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503100120304_updateDB21.cs" />
+    <Compile Include="Migrations\202503100120304_updateDB21.Designer.cs">
+      <DependentUpon>202503100120304_updateDB21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapports\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rapports\releveNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>releveNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\BulletinNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BulletinNote.Designer.cs">
+      <DependentUpon>BulletinNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +227,36 @@
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
     <Compile Include="DbExamContext.cs" />
+    <Compile Include="View\FrmClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmClasses.Designer.cs">
+      <DependentUpon>FrmClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmEtudiants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmEtudiants.Designer.cs">
+      <DependentUpon>FrmEtudiants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GestionCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GestionCours.Designer.cs">
+      <DependentUpon>GestionCours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GestionMatiere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GestionMatiere.Designer.cs">
+      <DependentUpon>GestionMatiere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GestionNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GestionNotes.Designer.cs">
+      <DependentUpon>GestionNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GestionProf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,17 +294,52 @@
     <Compile Include="models\Utilisateurs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\OTPValidation.cs">
+    <Compile Include="View\listedesetudiants.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\OTPValidation.Designer.cs">
-      <DependentUpon>OTPValidation.cs</DependentUpon>
+    <Compile Include="View\listedesetudiants.Designer.cs">
+      <DependentUpon>listedesetudiants.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\202503050239196_misajour.resx">
       <DependentUpon>202503050239196_misajour.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503092305161_updateDB.resx">
+      <DependentUpon>202503092305161_updateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503100116133_updateDB2.resx">
+      <DependentUpon>202503100116133_updateDB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503100120304_updateDB21.resx">
+      <DependentUpon>202503100120304_updateDB21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\releveNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>releveNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BulletinNote.resx">
+      <DependentUpon>BulletinNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmClasses.resx">
+      <DependentUpon>FrmClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmEtudiants.resx">
+      <DependentUpon>FrmEtudiants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GestionCours.resx">
+      <DependentUpon>GestionCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GestionMatiere.resx">
+      <DependentUpon>GestionMatiere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GestionNotes.resx">
+      <DependentUpon>GestionNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GestionProf.resx">
       <DependentUpon>GestionProf.cs</DependentUpon>
@@ -230,8 +364,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\OTPValidation.resx">
-      <DependentUpon>OTPValidation.cs</DependentUpon>
+    <EmbeddedResource Include="View\listedesetudiants.resx">
+      <DependentUpon>listedesetudiants.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -243,6 +377,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SystemeDeGestionDesEtudiants_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -258,6 +393,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Resources\3289566-assistant-educator-professor-showing-teacher-teaching_107089.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
