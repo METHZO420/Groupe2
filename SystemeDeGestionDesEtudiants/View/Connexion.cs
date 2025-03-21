@@ -25,7 +25,7 @@ namespace SystemeDeGestionDesEtudiants
 
             txtOTP.ReadOnly = false;
 
-            string nom = txtNomUtilisateur.Text;
+            string nom = txtNomUtilisateur.Text;  
             string mdp = txtMotDePasse.Text;
             using (var db = new DbExamContext())
             {
