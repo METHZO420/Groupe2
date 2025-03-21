@@ -17,7 +17,7 @@ namespace SystemeDeGestionDesEtudiants
 
 
         void btnAjouter_Click(object sender, EventArgs e)
-        {
+        {  
             using (var db = new DbExamContext())
             {
                 essaiProjetExam.Models.Utilisateurs user = new essaiProjetExam.Models.Utilisateurs();

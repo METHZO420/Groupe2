@@ -168,7 +168,7 @@ namespace SystemeDeGestionDesEtudiants.View
                     db.ProfesseursMatieres.Add(professeursMatieres);
                     db.SaveChanges();
                     MessageBox.Show("Le professeur"+prof.Nom+"est associer a la matiere "+cbMatiere.Text+"","Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                }  
             }
         }
 

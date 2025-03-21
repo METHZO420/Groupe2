@@ -20,7 +20,7 @@ namespace SystemeDeGestionDesEtudiants.View
         {
            using (var db = new DbExamContext())
             {
-              
+                
             }
         }
     }
