@@ -361,17 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/SystemeDeGestionDesEtudiants/View/FrmClasses.cs
-/SystemeDeGestionDesEtudiants/View/FrmClasses.Designer.cs
-/SystemeDeGestionDesEtudiants/View/FrmClasses.resx
-/SystemeDeGestionDesEtudiants/View/GestionCours.cs
-/SystemeDeGestionDesEtudiants/View/GestionCours.Designer.cs
-/SystemeDeGestionDesEtudiants/View/GestionCours.resx
-/SystemeDeGestionDesEtudiants/View/GestionMatiere.cs
-/SystemeDeGestionDesEtudiants/View/GestionMatiere.Designer.cs
-/SystemeDeGestionDesEtudiants/View/GestionMatiere.resx
-/SystemeDeGestionDesEtudiants/View/FrmEtudiants.cs
-/SystemeDeGestionDesEtudiants/View/FrmEtudiants.Designer.cs
-/SystemeDeGestionDesEtudiants/View/FrmEtudiants.resx
+
 
 
