@@ -1,8 +1,13 @@
-﻿using essaiProjetExam;
-using essaiProjetExam.Models;
+﻿using essaiProjetExam.Models;
+using essaiProjetExam;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 //using static DevExpress.Data.Helpers.SyncHelper.ZombieContextsDetector;
 
@@ -16,11 +21,11 @@ namespace SystemeDeGestionDesEtudiants
         }
 
 
-        void btnAjouter_Click(object sender, EventArgs e)
-        {  
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
             using (var db = new DbExamContext())
             {
-                essaiProjetExam.Models.Utilisateurs user = new essaiProjetExam.Models.Utilisateurs();
+                Utilisateurs user = new Utilisateurs();
                 user.NomUtilisateur = txtNom.Text;
                 user.MotDePasse = txtMotDePasse.Text;
                 user.Role = txtRole.Text;
@@ -29,6 +34,7 @@ namespace SystemeDeGestionDesEtudiants
                 db.Utilisateurs.Add(user);
                 db.SaveChanges();
                 actualiser();
+
             }
         }
 
@@ -67,6 +73,7 @@ namespace SystemeDeGestionDesEtudiants
             {
                 txtMotDePasse.Text = "";
                 txtNom.Text = "";
+                txtRole.Text = "";
                 txtTelephone.Text = "";
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = db.Utilisateurs.Select(c => new ViewUser { Id = c.Id, NomUtilisateur = c.NomUtilisateur, Role = c.Role, Telephone = c.Telephone }).ToList();
@@ -84,7 +91,9 @@ namespace SystemeDeGestionDesEtudiants
             {
                 string nomrech = txtRecherche.Text.Trim().ToLower();
                 var etd = db.Utilisateurs.Where(c => c.NomUtilisateur.ToLower().Contains(nomrech)).ToList();
+
                 dataGridView1.DataSource = etd;
+
             }
         }
 
@@ -98,6 +107,8 @@ namespace SystemeDeGestionDesEtudiants
 
                     if (dataGridView1.SelectedRows != null)
                     {
+
+
                         DialogResult choix = MessageBox.Show("Voullez vous Vraiment Modifer l'utilisateur ?", "Confirmer de la Modification ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (choix == DialogResult.Yes)
                         {
@@ -109,8 +120,10 @@ namespace SystemeDeGestionDesEtudiants
                             utilisateurModifier.MotDePasse = txtMotDePasse.Text;
                             utilisateurModifier.Role = txtRole.Text;
                             utilisateurModifier.Telephone = txtTelephone.Text;
+
                             db.SaveChanges();
                             actualiser();
+
                         }
                         else
                         {
@@ -134,7 +147,9 @@ namespace SystemeDeGestionDesEtudiants
             {
                 int idUser = (int)dataGridView1.SelectedRows[0].Cells["id"].Value;
                 Utilisateurs utilisateurModifier = db.Set<Utilisateurs>().Find(idUser);
+
                 txtNom.Text = utilisateurModifier.NomUtilisateur;
+
                 txtMotDePasse.Text = utilisateurModifier.MotDePasse;
                 txtRole.Text = utilisateurModifier.Role;
                 txtTelephone.Text = utilisateurModifier.Telephone;
@@ -160,17 +175,13 @@ namespace SystemeDeGestionDesEtudiants
                     db.Utilisateurs.Remove(UtilisateurSupprimer);
                     db.SaveChanges();
                     actualiser();
+
                 }
             }
             else
             {
                 MessageBox.Show("Suppression Annulée", "Operation annulée", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

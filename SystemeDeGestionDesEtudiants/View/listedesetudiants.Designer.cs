@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport11 = new SystemeDeGestionDesEtudiants.Rapports.CrystalReport1();
+         //   this.CrystalReport11 = new SystemeDeGestionDesEtudiants.Rapports.CrystalReport1();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -79,7 +79,7 @@
             this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer2.Location = new System.Drawing.Point(200, 29);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = this.CrystalReport11;
+            //this.crystalReportViewer2.ReportSource = this.CrystalReport11;
             this.crystalReportViewer2.Size = new System.Drawing.Size(982, 583);
             this.crystalReportViewer2.TabIndex = 3;
             this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -104,6 +104,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
-        private Rapports.CrystalReport1 CrystalReport11;
+       // private Rapports.CrystalReport1 CrystalReport11;
     }
 }

@@ -202,16 +202,10 @@
     <Compile Include="Migrations\202503100120304_updateDB21.Designer.cs">
       <DependentUpon>202503100120304_updateDB21.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rapports\CrystalReport1.cs">
+    <Compile Include="Rapport\relevenote.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Rapports\releveNote.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>releveNote.rpt</DependentUpon>
+      <DependentUpon>relevenote.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\BulletinNote.cs">
@@ -219,6 +213,12 @@
     </Compile>
     <Compile Include="View\BulletinNote.Designer.cs">
       <DependentUpon>BulletinNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BulletinNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BulletinNotes.Designer.cs">
+      <DependentUpon>BulletinNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Connexion.cs">
       <SubType>Form</SubType>
@@ -263,12 +263,6 @@
     <Compile Include="View\GestionProf.Designer.cs">
       <DependentUpon>GestionProf.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\GestionUsers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\GestionUsers.Designer.cs">
-      <DependentUpon>GestionUsers.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Acceuil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +288,12 @@
     <Compile Include="models\Utilisateurs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\GestionUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GestionUsers.Designer.cs">
+      <DependentUpon>GestionUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\listedesetudiants.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,13 +312,9 @@
     <EmbeddedResource Include="Migrations\202503100120304_updateDB21.resx">
       <DependentUpon>202503100120304_updateDB21.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rapports\CrystalReport1.rpt">
+    <EmbeddedResource Include="Rapport\relevenote.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rapports\releveNote.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>releveNote.cs</LastGenOutput>
+      <LastGenOutput>relevenote.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\BulletinNote.resx">
       <DependentUpon>BulletinNote.cs</DependentUpon>
@@ -344,9 +340,6 @@
     <EmbeddedResource Include="View\GestionProf.resx">
       <DependentUpon>GestionProf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\GestionUsers.resx">
-      <DependentUpon>GestionUsers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Acceuil.resx">
       <DependentUpon>Acceuil.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,6 +357,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\GestionUsers.resx">
+      <DependentUpon>GestionUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\listedesetudiants.resx">
       <DependentUpon>listedesetudiants.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +407,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
