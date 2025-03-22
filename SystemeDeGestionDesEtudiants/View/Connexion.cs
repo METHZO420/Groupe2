@@ -34,7 +34,7 @@ namespace SystemeDeGestionDesEtudiants
                 {
                     MessageBox.Show("Veuillez saisir l'otp qui vous envoyer par SMS dans le champ CODE OTP", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     string accountSid = "AC1d58649cc707b259d9a44f6276a73302";
-                    string authToken = "b7f28e158bf9fbd6feba2b29c291da3b";
+                    string authToken = "0329d0e5b27d417189242f72dc60bc37";
                     //   string twilioPhoneNumber = "+221781492188"; // Votre numéro Twilio
                     TwilioClient.Init(accountSid, authToken);
 
@@ -91,9 +91,9 @@ namespace SystemeDeGestionDesEtudiants
                             db.OTPCodes.Add(otp);
                             db.SaveChanges();
                             MessageBox.Show("Code OTP valide. Accès autorisé.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
                             Form acceuil = new Acceuil(user.Id);
                             acceuil.ShowDialog();
-                            this.Hide();
                         }
                         else
                         {

@@ -52,9 +52,12 @@ namespace SystemeDeGestionDesEtudiants.View
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Vous allez être deconnecté", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
             Form connexin = new Connexion();
             connexin.ShowDialog();
+            this.Close();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -84,6 +87,17 @@ namespace SystemeDeGestionDesEtudiants.View
         {
             Form form = new FrmEtudiants();
             form.ShowDialog();
+        }
+
+        private void lkGestionNote_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form form = new GestionNotes();
+            form.ShowDialog();
+        }
+
+        private void Acceuil_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

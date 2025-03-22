@@ -40,7 +40,6 @@
             this.CbCours = new System.Windows.Forms.ComboBox();
             this.BtnAssCours = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnlisteetd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgClasses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(316, 24);
+            this.label1.Location = new System.Drawing.Point(95, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(322, 36);
@@ -177,28 +176,12 @@
             this.label7.Text = "Veuillez Sélectionner une classe pour lui assosier un cours";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // btnlisteetd
-            // 
-            this.btnlisteetd.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnlisteetd.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnlisteetd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnlisteetd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnlisteetd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlisteetd.Location = new System.Drawing.Point(395, 79);
-            this.btnlisteetd.Name = "btnlisteetd";
-            this.btnlisteetd.Size = new System.Drawing.Size(230, 28);
-            this.btnlisteetd.TabIndex = 19;
-            this.btnlisteetd.Text = "Liste des etudiants";
-            this.btnlisteetd.UseVisualStyleBackColor = false;
-            this.btnlisteetd.Click += new System.EventHandler(this.btnlisteetd_Click);
-            // 
             // FrmClasses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(934, 511);
-            this.Controls.Add(this.btnlisteetd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnAssCours);
             this.Controls.Add(this.CbCours);
@@ -236,6 +219,5 @@
         private System.Windows.Forms.ComboBox CbCours;
         private System.Windows.Forms.Button BtnAssCours;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnlisteetd;
     }
 }

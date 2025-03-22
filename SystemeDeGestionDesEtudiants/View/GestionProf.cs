@@ -12,10 +12,10 @@ namespace SystemeDeGestionDesEtudiants.View
         public GestionProf()
         {
             InitializeComponent();
-            using(var db = new DbExamContext())
+            using (var db = new DbExamContext())
             {
                 cbMatiere.DataSource = db.Matieres.ToList();
-                cbMatiere.DisplayMember = "Nom";
+                cbMatiere.DisplayMember = "NomMatiere";
                 cbMatiere.ValueMember = "Id";
             }
         }
@@ -157,7 +157,7 @@ namespace SystemeDeGestionDesEtudiants.View
                     ProfesseursMatieres professeursMatieres = new ProfesseursMatieres();
                     int idMatiere = (int)cbMatiere.SelectedValue;
                     var proflist = db.ProfesseursMatieres.Where(c => c.IdProfesseur == idProf && c.IdMatiere == idMatiere).ToList();
-                    if (proflist!= null)
+                    if (proflist != null)
                     {
                         MessageBox.Show("Le professeur est deja associé a cette matiere", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -167,12 +167,17 @@ namespace SystemeDeGestionDesEtudiants.View
                     professeursMatieres.Matieres = db.Matieres.Find((int)cbMatiere.SelectedValue);
                     db.ProfesseursMatieres.Add(professeursMatieres);
                     db.SaveChanges();
-                    MessageBox.Show("Le professeur"+prof.Nom+"est associer a la matiere "+cbMatiere.Text+"","Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }  
+                    MessageBox.Show("Le professeur" + prof.Nom + "est associer a la matiere " + cbMatiere.Text + "", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void cbMatiere_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbUtilisateur_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

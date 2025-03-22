@@ -1,4 +1,7 @@
-﻿using essaiProjetExam;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
+using essaiProjetExam;
 using essaiProjetExam.Models;
 using System;
 using System.Data;
@@ -67,7 +70,7 @@ namespace SystemeDeGestionDesEtudiants.View
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count !=null )
+            if (dataGridView1.SelectedRows.Count != null)
             {
                 using (var db = new DbExamContext())
                 {
@@ -226,7 +229,7 @@ namespace SystemeDeGestionDesEtudiants.View
                 }
             }
         }
-          
+
         private void btnModifier_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows != null)
@@ -279,43 +282,12 @@ namespace SystemeDeGestionDesEtudiants.View
 
         private void btnConsultation_Click(object sender, EventArgs e)
         {
-
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int etudiantId = (int)dataGridView1.SelectedRows[0].Cells["Id"].Value;
-
-                /*  // Créer une instance du rapport
-                  ReportDocument reportDocument = new ReportDocument();
-                  reportDocument.Load("C:\\Users\\Hp\\source\\repos\\SystemeDeGestionDesEtudiants\\SystemeDeGestionDesEtudiants\\Rapports\\releveNote.rpt");
-
-                  // Passer le paramètre EtudiantId au rapport
-                  ParameterFieldDefinitions parameterFieldDefinitions = reportDocument.DataDefinition.ParameterFields;
-                  ParameterFieldDefinition parameterFieldDefinition = parameterFieldDefinitions["EtudiantId"];
-                  ParameterValues parameterValues = new ParameterValues();
-                  ParameterDiscreteValue parameterDiscreteValue = new ParameterDiscreteValue();
-                  parameterDiscreteValue.Value = etudiantId;
-                  parameterValues.Add(parameterDiscreteValue);
-                  parameterFieldDefinition.ApplyCurrentValues(parameterValues);
-
-                  // Afficher le rapport dans un CrystalReportViewer
-                  CrystalReportViewer reportViewer = new CrystalReportViewer();
-                  reportViewer.ReportSource = reportDocument;
-                  // Rafraîchir le rapport
-                  reportViewer.Refresh();
-              reportViewer.RefreshReport();
-
-              // Afficher le CrystalReportViewer dans un formulaire
-              Form reportForm = new BulletinNote();
-                  reportForm.Controls.Add(reportViewer);
-
-                  reportViewer.Dock = DockStyle.Fill;
-                  reportForm.ShowDialog();*/
-
-                Form bulletindenote = new BulletinNote(etudiantId);
-                bulletindenote.ShowDialog();
+                BulletinNote bulletinNote = new BulletinNote(etudiantId);
+                bulletinNote.ShowDialog();
             }
-
             else
             {
                 MessageBox.Show("Veuillez sélectionner un étudiant.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -323,6 +295,3 @@ namespace SystemeDeGestionDesEtudiants.View
         }
     }
 }
-
-
-
